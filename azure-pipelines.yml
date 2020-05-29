@@ -2,20 +2,20 @@ trigger:
 - '*'
     
 pool:
-    vmImage: 'ubuntu-16.04'
-    demands:
-        - npm
+  vmImage: 'ubuntu-16.04'
+  demands:
+      - npm
     
 variables:
-    buildConfiguration: 'Release'
-    wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-    dotnetSdkVersion: '3.1.100'
+  buildConfiguration: 'Release'
+  wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
+  dotnetSdkVersion: '3.1.100'
     
 steps:
 - task: UseDotNet@2
-    displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
-    inputs:
-        version: '$(dotnetSdkVersion)'
+  displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
+  inputs:
+      version: '$(dotnetSdkVersion)'
     
 - task: NuGetToolInstaller@0
     inputs:
